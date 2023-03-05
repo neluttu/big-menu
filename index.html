@@ -16,39 +16,35 @@
         <div id="container">
             <div class="mainMenu">
                 <ul>
-                    <li><a href="#" data-id="product">Product <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="#8598ab" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <li><span data-id="product">Product <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="#8598ab" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <polyline points="6 9 12 15 18 9" />
-                      </svg></a>
+                      </svg></span>
                     </li>
-                    <li><a href="#" data-id="features">Features <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="#8598ab" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <li><span data-id="features">Features <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="#8598ab" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <polyline points="6 9 12 15 18 9" />
-                      </svg></a>
+                      </svg></span>
                     </li>
-                    <li><a href="#" class="active" data-id="resources">Resources <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="#8598ab" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <li><span class="active" data-id="resources">Resources <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="#8598ab" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <polyline points="6 9 12 15 18 9" />
-                      </svg></a>
+                      </svg></span>
                     </li>
-                    <li><a href="#" data-id="pricing">Pricing <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="#8598ab" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <li><span data-id="pricing">Pricing <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="#8598ab" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <polyline points="6 9 12 15 18 9" />
-                      </svg></a>
+                      </svg></span>
                     </li>
-                    <li><a href="#" data-id="about">About <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="#8598ab" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <li><span data-id="about">About <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="#8598ab" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <polyline points="6 9 12 15 18 9" />
-                      </svg></a>
+                      </svg></span>
                     </li>
                 </ul>
             </div>
             <div class="menuItem" data-id="product">
-                <span style="display:block; padding:25px; color: white;">
                     <h2>Serverless computing</h2>
-                    <img src="https://dreamland.ro/assets/serverlessComputingBanner.jpg" style="width:40%; box-sizing: content-box; float:right; margin-left: 20px; border-radius:15px">
-                    Serverless is a cloud computing application development and execution model that enables developers to build and run application code without provisioning or managing servers or backend infrastructure.
-                </span>
             </div>
             <div class="menuItem" data-id="features">
                 <span style="display:block; padding:25px; color: white;">
@@ -164,24 +160,24 @@
                     <h2>About</h2>
                 </span>
             </div>
-
+            <br><br><br><br>
             <script>
                 $('.menuItem').hide();
                 $('.menuItem[data-id="resources"]').show();
 
-                $(".mainMenu a").mouseenter(
+                $(".mainMenu span").on('click mouseenter',
                     function () {
                         var menuID = $(this).attr("data-id");
                         $('.menuItem').finish().hide(); 
-                        $(".mainMenu a").removeClass("active");
-                        $('.mainMenu a[data-id="' + menuID + '"]').addClass("active");
+                        $(".mainMenu span").removeClass("active");
+                        $('.mainMenu span[data-id="' + menuID + '"]').addClass("active");
                         $('.menuItem[data-id="' + menuID + '"]').finish().slideDown('medium');
                 });
 
                 $(".menuItem").mouseleave(
                     function () { 
                         $('.menuItem').finish().slideUp('medium');
-                        $(".mainMenu a").removeClass("active");
+                        $(".mainMenu span").removeClass("active");
                 });
 
             </script>
