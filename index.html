@@ -168,6 +168,9 @@
                 $(".mainMenu span").on('click mouseenter',
                     function () {
                         var menuID = $(this).attr("data-id");
+
+                        
+
                         $('.menuItem').finish().hide(); 
                         $(".mainMenu span").removeClass("active");
                         $('.mainMenu span[data-id="' + menuID + '"]').addClass("active");
